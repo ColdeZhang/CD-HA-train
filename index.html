@@ -3,28 +3,57 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f5f7fb">
   <title>成都 ↔ 海安 夜间动卧方案</title>
   <link rel="stylesheet" href="./assets/styles.css">
 </head>
 <body>
-  <header class="topbar">
-    <div>
-      <h1>成都 ↔ 海安 夜间动卧方案</h1>
-      <p>循环周时间轴 · 每行一个方案 · 点击横条展开详情</p>
-    </div>
-    <div class="toolbar">
-      <button id="todayBtn">回到本周</button>
-      <label><input id="hideTight" type="checkbox"> 隐藏紧张换乘</label>
-      <button id="collapseBtn">折叠全部</button>
-    </div>
-  </header>
-  <main>
-    <section id="meta" class="meta"></section>
-    <section id="planner" class="planner" aria-live="polite"></section>
-  </main>
-  <template id="detailTemplate">
-    <div class="details"></div>
-  </template>
+  <div class="page-shell">
+    <header class="app-header">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"><span></span><i></i><span></span></div>
+        <div>
+          <div class="eyebrow">NIGHT TRAIN PLANNER</div>
+          <h1>成都 <span>↔</span> 海安</h1>
+          <p>把长途移动放进睡眠时间里</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <label class="switch-control">
+          <input id="hideTight" type="checkbox">
+          <span class="switch-track"><span></span></span>
+          <span>隐藏紧张换乘</span>
+        </label>
+        <button id="todayBtn" class="ghost-button" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.34-5.66M4 4v5h5"/></svg>
+          回到本周
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro-card">
+        <div>
+          <span class="intro-label">使用方式</span>
+          <h2>横向滚动查看一周，周日之后自然接下一周</h2>
+          <p>每一行是一套完整出行方案。横条只显示出发、换乘站和到达时间；点击横条查看详细车次与换乘时间。</p>
+        </div>
+        <div id="meta" class="data-status"></div>
+      </section>
+      <section id="planner" class="planner" aria-live="polite"></section>
+    </main>
+  </div>
+
+  <div id="tripModal" class="modal" aria-hidden="true">
+    <button class="modal-backdrop" type="button" aria-label="关闭详情"></button>
+    <section class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button id="modalClose" class="modal-close" type="button" aria-label="关闭">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+      <div id="modalContent"></div>
+    </section>
+  </div>
+
   <script type="module" src="./assets/app.js"></script>
 </body>
 </html>
