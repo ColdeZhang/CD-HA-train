@@ -29,6 +29,22 @@ function segmentDuration(s){
 }
 function tripDuration(p){return mins(p.arrive)-mins(p.depart);}
 function weekdaysText(p){return p.weekdays.map(function(d){return DAY_NAMES[d-1];}).join("、");}
+function priceNumber(n){
+  return Number.isInteger(n)?String(n):Number(n).toFixed(1).replace(/\.0$/,"");
+}
+function fareText(fare){
+  if(!fare) return "票价待补";
+  if(fare.min===fare.max) return "¥"+priceNumber(fare.min);
+  return "¥"+priceNumber(fare.min)+"–"+priceNumber(fare.max);
+}
+function totalFare(p){
+  return p.segments.reduce(function(total,s){
+    if(!s.train||!s.fare) return total;
+    total.min+=s.fare.min;
+    total.max+=s.fare.max;
+    return total;
+  },{min:0,max:0});
+}
 
 let DATA;
 let lastFocusedBar=null;
@@ -195,6 +211,7 @@ function openTripModal(p,bar){
   const sleeper=sleeperOf(p);
   const transferCount=transfersOf(p).length;
   const sleeperMinutes=sleeper?segmentDuration(sleeper):0;
+  const fareTotal=totalFare(p);
   const tight=hasTight(p);
   let journey="";
 
@@ -218,7 +235,13 @@ function openTripModal(p,bar){
               '<div class="leg-route">'+s.from+' → '+s.to+'</div>'+
               '<div class="leg-train"><b>'+s.train+'</b> · '+s.depart+' 出发 · '+(nextDay?"次日 ":"")+s.arrive+' 到达</div>'+
             '</div>'+
-            '<span class="kind-badge '+(s.sleeper?"sleep":"")+'">'+(s.sleeper?"夜间动卧":"接驳")+'</span>'+
+            '<div class="leg-side">'+
+              '<div class="leg-fare">'+
+                '<span>'+s.fare.seat+(s.fare.estimated?" · 估算":"")+'</span>'+
+                '<strong>'+fareText(s.fare)+'</strong>'+
+              '</div>'+
+              '<span class="kind-badge '+(s.sleeper?"sleep":"")+'">'+(s.sleeper?"夜间动卧":"接驳")+'</span>'+
+            '</div>'+
           '</div>'+
         '</div>';
     }else{
@@ -246,11 +269,18 @@ function openTripModal(p,bar){
   modalContent.innerHTML=
     '<div class="modal-body">'+
       '<div class="modal-kicker">'+p.direction.replace("-"," → ")+' · '+weekdaysText(p)+'运行</div>'+
-      '<h2 id="modalTitle" class="modal-title">'+
-        p.depart.time+' '+p.depart.station+
-        '<span class="muted-arrow">→</span>'+
-        '次日 '+p.arrive.time+' '+p.arrive.station+
-      '</h2>'+
+      '<div class="modal-heading-row">'+
+        '<h2 id="modalTitle" class="modal-title">'+
+          p.depart.time+' '+p.depart.station+
+          '<span class="muted-arrow">→</span>'+
+          '次日 '+p.arrive.time+' '+p.arrive.station+
+        '</h2>'+
+        '<div class="total-fare">'+
+          '<span>参考总票价</span>'+
+          '<strong>'+fareText(fareTotal)+'</strong>'+
+          '<small>动卧 + 接驳二等座</small>'+
+        '</div>'+
+      '</div>'+
       '<p class="modal-subtitle">'+p.name+(tight?" · 含紧张换乘，建议购票前再次核对":"")+'</p>'+
 
       '<div class="modal-stats">'+
@@ -262,7 +292,7 @@ function openTripModal(p,bar){
       sleepFocus+
       '<div class="journey-title">完整行程</div>'+
       '<div class="journey">'+journey+'</div>'+
-      '<div class="modal-note">时刻表用于长期方案速查，不代表实时余票。铁路调图、节假日或临时加开时，请以购票当天 12306 显示为准。</div>'+
+      '<div class="modal-note">'+DATA.meta.fareNote+'<br>时刻表用于长期方案速查，不代表实时余票。铁路调图、节假日或临时加开时，请以购票当天 12306 显示为准。</div>'+
     '</div>';
 
   modal.classList.add("is-open");

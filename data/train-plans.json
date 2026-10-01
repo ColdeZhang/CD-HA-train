@@ -7,7 +7,9 @@
       "用于长期车次安排速查，不代表实时余票。",
       "铁路实行一日一图，节假日、调图期和临时加开可能变化。",
       "核心筛选目标：尽量保证完整夜间睡眠落在某一趟动卧上。"
-    ]
+    ],
+    "fareUpdated": "2026-10-01",
+    "fareNote": "票价为成人票参考价；接驳段按二等座，夜间长途段按动卧。动卧及部分动车实行浮动票价，区间表示近期查询到的参考范围，购票以12306实时价格为准。"
   },
   "plans": [
     {
@@ -38,7 +40,13 @@
           "arrive": "06:16",
           "departDayOffset": 0,
           "arriveDayOffset": 1,
-          "sleeper": true
+          "sleeper": true,
+          "fare": {
+            "seat": "动卧",
+            "min": 690,
+            "max": 720,
+            "estimated": true
+          }
         },
         {
           "transferAt": "盐城",
@@ -52,7 +60,12 @@
           "arrive": "07:23",
           "departDayOffset": 1,
           "arriveDayOffset": 1,
-          "sleeper": false
+          "sleeper": false,
+          "fare": {
+            "seat": "二等座",
+            "min": 51,
+            "max": 51
+          }
         }
       ]
     },
@@ -84,7 +97,12 @@
           "arrive": "06:00",
           "departDayOffset": 0,
           "arriveDayOffset": 1,
-          "sleeper": true
+          "sleeper": true,
+          "fare": {
+            "seat": "动卧",
+            "min": 640,
+            "max": 640
+          }
         },
         {
           "transferAt": "淮安东",
@@ -98,7 +116,12 @@
           "arrive": "07:23",
           "departDayOffset": 1,
           "arriveDayOffset": 1,
-          "sleeper": false
+          "sleeper": false,
+          "fare": {
+            "seat": "二等座",
+            "min": 106,
+            "max": 106
+          }
         }
       ]
     },
@@ -130,7 +153,12 @@
           "arrive": "07:00",
           "departDayOffset": 0,
           "arriveDayOffset": 1,
-          "sleeper": true
+          "sleeper": true,
+          "fare": {
+            "seat": "动卧",
+            "min": 800,
+            "max": 930
+          }
         },
         {
           "transferAt": "江阴",
@@ -144,7 +172,12 @@
           "arrive": "07:53",
           "departDayOffset": 1,
           "arriveDayOffset": 1,
-          "sleeper": false
+          "sleeper": false,
+          "fare": {
+            "seat": "二等座",
+            "min": 25,
+            "max": 25
+          }
         },
         {
           "transferAt": "张家港",
@@ -159,7 +192,12 @@
           "arrive": "08:53",
           "departDayOffset": 1,
           "arriveDayOffset": 1,
-          "sleeper": false
+          "sleeper": false,
+          "fare": {
+            "seat": "二等座",
+            "min": 42,
+            "max": 44
+          }
         }
       ]
     },
@@ -191,7 +229,12 @@
           "arrive": "07:00",
           "departDayOffset": 0,
           "arriveDayOffset": 1,
-          "sleeper": true
+          "sleeper": true,
+          "fare": {
+            "seat": "动卧",
+            "min": 800,
+            "max": 930
+          }
         },
         {
           "transferAt": "江阴",
@@ -205,7 +248,12 @@
           "arrive": "07:53",
           "departDayOffset": 1,
           "arriveDayOffset": 1,
-          "sleeper": false
+          "sleeper": false,
+          "fare": {
+            "seat": "二等座",
+            "min": 25,
+            "max": 25
+          }
         },
         {
           "transferAt": "张家港",
@@ -219,7 +267,12 @@
           "arrive": "09:08",
           "departDayOffset": 1,
           "arriveDayOffset": 1,
-          "sleeper": false
+          "sleeper": false,
+          "fare": {
+            "seat": "二等座",
+            "min": 48,
+            "max": 49
+          }
         }
       ]
     },
@@ -251,7 +304,12 @@
           "arrive": "07:18",
           "departDayOffset": 0,
           "arriveDayOffset": 1,
-          "sleeper": true
+          "sleeper": true,
+          "fare": {
+            "seat": "动卧",
+            "min": 800,
+            "max": 930
+          }
         },
         {
           "transferAt": "江阴",
@@ -265,7 +323,12 @@
           "arrive": "07:53",
           "departDayOffset": 1,
           "arriveDayOffset": 1,
-          "sleeper": false
+          "sleeper": false,
+          "fare": {
+            "seat": "二等座",
+            "min": 25,
+            "max": 25
+          }
         },
         {
           "transferAt": "张家港",
@@ -279,7 +342,12 @@
           "arrive": "09:08",
           "departDayOffset": 1,
           "arriveDayOffset": 1,
-          "sleeper": false
+          "sleeper": false,
+          "fare": {
+            "seat": "二等座",
+            "min": 48,
+            "max": 49
+          }
         }
       ]
     },
@@ -311,7 +379,12 @@
           "arrive": "20:07",
           "departDayOffset": 0,
           "arriveDayOffset": 0,
-          "sleeper": false
+          "sleeper": false,
+          "fare": {
+            "seat": "二等座",
+            "min": 89,
+            "max": 89
+          }
         },
         {
           "transferAt": "淮安东",
@@ -325,7 +398,12 @@
           "arrive": "08:57",
           "departDayOffset": 0,
           "arriveDayOffset": 1,
-          "sleeper": true
+          "sleeper": true,
+          "fare": {
+            "seat": "动卧",
+            "min": 640,
+            "max": 720
+          }
         }
       ]
     },
@@ -357,7 +435,12 @@
           "arrive": "19:53",
           "departDayOffset": 0,
           "arriveDayOffset": 0,
-          "sleeper": false
+          "sleeper": false,
+          "fare": {
+            "seat": "二等座",
+            "min": 46,
+            "max": 46
+          }
         },
         {
           "transferAt": "盐城",
@@ -371,7 +454,12 @@
           "arrive": "09:03",
           "departDayOffset": 0,
           "arriveDayOffset": 1,
-          "sleeper": true
+          "sleeper": true,
+          "fare": {
+            "seat": "动卧",
+            "min": 780,
+            "max": 780
+          }
         }
       ]
     },
@@ -403,7 +491,12 @@
           "arrive": "18:08",
           "departDayOffset": 0,
           "arriveDayOffset": 0,
-          "sleeper": false
+          "sleeper": false,
+          "fare": {
+            "seat": "二等座",
+            "min": 54,
+            "max": 54
+          }
         },
         {
           "transferAt": "张家港",
@@ -417,7 +510,12 @@
           "arrive": "18:49",
           "departDayOffset": 0,
           "arriveDayOffset": 0,
-          "sleeper": false
+          "sleeper": false,
+          "fare": {
+            "seat": "二等座",
+            "min": 25,
+            "max": 25
+          }
         },
         {
           "transferAt": "江阴",
@@ -431,7 +529,12 @@
           "arrive": "08:16",
           "departDayOffset": 0,
           "arriveDayOffset": 1,
-          "sleeper": true
+          "sleeper": true,
+          "fare": {
+            "seat": "动卧",
+            "min": 800,
+            "max": 1200
+          }
         }
       ]
     },
@@ -463,7 +566,12 @@
           "arrive": "18:08",
           "departDayOffset": 0,
           "arriveDayOffset": 0,
-          "sleeper": false
+          "sleeper": false,
+          "fare": {
+            "seat": "二等座",
+            "min": 54,
+            "max": 54
+          }
         },
         {
           "transferAt": "张家港",
@@ -477,7 +585,12 @@
           "arrive": "19:41",
           "departDayOffset": 0,
           "arriveDayOffset": 0,
-          "sleeper": false
+          "sleeper": false,
+          "fare": {
+            "seat": "二等座",
+            "min": 116,
+            "max": 116
+          }
         },
         {
           "transferAt": "南京南",
@@ -491,7 +604,12 @@
           "arrive": "08:21",
           "departDayOffset": 0,
           "arriveDayOffset": 1,
-          "sleeper": true
+          "sleeper": true,
+          "fare": {
+            "seat": "动卧",
+            "min": 740,
+            "max": 860
+          }
         }
       ]
     }
