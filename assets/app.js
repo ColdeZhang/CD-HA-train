@@ -203,7 +203,16 @@ function openTripModal(p,bar){
       const nextDay=s.arriveDayOffset>s.departDayOffset;
       journey+=
         '<div class="leg '+(s.sleeper?"sleeper":"")+'">'+
-          '<div class="leg-time">'+s.depart+'</div>'+
+          '<div class="leg-times">'+
+            '<div class="time-point depart">'+
+              '<span class="time-kind">发</span>'+
+              '<span class="clock">'+s.depart+'</span>'+
+            '</div>'+
+            '<div class="time-point arrive">'+
+              '<span class="time-kind">到</span>'+
+              '<span class="clock">'+(nextDay?'<small>次日</small>':'')+s.arrive+'</span>'+
+            '</div>'+
+          '</div>'+
           '<div class="leg-card">'+
             '<div>'+
               '<div class="leg-route">'+s.from+' → '+s.to+'</div>'+
