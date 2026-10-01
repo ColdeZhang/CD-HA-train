@@ -1,0 +1,499 @@
+{
+  "meta": {
+    "title": "成都 ↔ 海安 夜间动卧方案",
+    "version": "2026-10-01",
+    "timezone": "Asia/Shanghai",
+    "notes": [
+      "用于长期车次安排速查，不代表实时余票。",
+      "铁路实行一日一图，节假日、调图期和临时加开可能变化。",
+      "核心筛选目标：尽量保证完整夜间睡眠落在某一趟动卧上。"
+    ]
+  },
+  "plans": [
+    {
+      "id": "cd-ha-a1",
+      "direction": "成都-海安",
+      "name": "经盐城 · 1次换乘",
+      "weekdays": [
+        1,
+        6,
+        7
+      ],
+      "depart": {
+        "station": "成都东",
+        "time": "19:44",
+        "dayOffset": 0
+      },
+      "arrive": {
+        "station": "海安",
+        "time": "07:23",
+        "dayOffset": 1
+      },
+      "segments": [
+        {
+          "train": "D974/D971",
+          "from": "成都东",
+          "to": "盐城",
+          "depart": "19:44",
+          "arrive": "06:16",
+          "departDayOffset": 0,
+          "arriveDayOffset": 1,
+          "sleeper": true
+        },
+        {
+          "transferAt": "盐城",
+          "waitMinutes": 41
+        },
+        {
+          "train": "G8287",
+          "from": "盐城",
+          "to": "海安",
+          "depart": "06:57",
+          "arrive": "07:23",
+          "departDayOffset": 1,
+          "arriveDayOffset": 1,
+          "sleeper": false
+        }
+      ]
+    },
+    {
+      "id": "cd-ha-a2",
+      "direction": "成都-海安",
+      "name": "经淮安东 · 1次换乘",
+      "weekdays": [
+        1,
+        6,
+        7
+      ],
+      "depart": {
+        "station": "成都东",
+        "time": "19:48",
+        "dayOffset": 0
+      },
+      "arrive": {
+        "station": "海安",
+        "time": "07:23",
+        "dayOffset": 1
+      },
+      "segments": [
+        {
+          "train": "D978/D975",
+          "from": "成都东",
+          "to": "淮安东",
+          "depart": "19:48",
+          "arrive": "06:00",
+          "departDayOffset": 0,
+          "arriveDayOffset": 1,
+          "sleeper": true
+        },
+        {
+          "transferAt": "淮安东",
+          "waitMinutes": 23
+        },
+        {
+          "train": "G8287",
+          "from": "淮安东",
+          "to": "海安",
+          "depart": "06:23",
+          "arrive": "07:23",
+          "departDayOffset": 1,
+          "arriveDayOffset": 1,
+          "sleeper": false
+        }
+      ]
+    },
+    {
+      "id": "cd-ha-b1-fast",
+      "direction": "成都-海安",
+      "name": "经江阴、张家港 · 快速",
+      "weekdays": [
+        3,
+        4,
+        5
+      ],
+      "depart": {
+        "station": "成都东",
+        "time": "17:36",
+        "dayOffset": 0
+      },
+      "arrive": {
+        "station": "海安",
+        "time": "08:53",
+        "dayOffset": 1
+      },
+      "segments": [
+        {
+          "train": "D981/D984",
+          "from": "成都东",
+          "to": "江阴",
+          "depart": "17:36",
+          "arrive": "07:00",
+          "departDayOffset": 0,
+          "arriveDayOffset": 1,
+          "sleeper": true
+        },
+        {
+          "transferAt": "江阴",
+          "waitMinutes": 39
+        },
+        {
+          "train": "C3651",
+          "from": "江阴",
+          "to": "张家港",
+          "depart": "07:39",
+          "arrive": "07:53",
+          "departDayOffset": 1,
+          "arriveDayOffset": 1,
+          "sleeper": false
+        },
+        {
+          "transferAt": "张家港",
+          "waitMinutes": 9,
+          "tight": true
+        },
+        {
+          "train": "C3792",
+          "from": "张家港",
+          "to": "海安",
+          "depart": "08:02",
+          "arrive": "08:53",
+          "departDayOffset": 1,
+          "arriveDayOffset": 1,
+          "sleeper": false
+        }
+      ]
+    },
+    {
+      "id": "cd-ha-b1-safe",
+      "direction": "成都-海安",
+      "name": "经江阴、张家港 · 稳妥",
+      "weekdays": [
+        3,
+        4,
+        5
+      ],
+      "depart": {
+        "station": "成都东",
+        "time": "17:36",
+        "dayOffset": 0
+      },
+      "arrive": {
+        "station": "海安",
+        "time": "09:08",
+        "dayOffset": 1
+      },
+      "segments": [
+        {
+          "train": "D981/D984",
+          "from": "成都东",
+          "to": "江阴",
+          "depart": "17:36",
+          "arrive": "07:00",
+          "departDayOffset": 0,
+          "arriveDayOffset": 1,
+          "sleeper": true
+        },
+        {
+          "transferAt": "江阴",
+          "waitMinutes": 39
+        },
+        {
+          "train": "C3651",
+          "from": "江阴",
+          "to": "张家港",
+          "depart": "07:39",
+          "arrive": "07:53",
+          "departDayOffset": 1,
+          "arriveDayOffset": 1,
+          "sleeper": false
+        },
+        {
+          "transferAt": "张家港",
+          "waitMinutes": 30
+        },
+        {
+          "train": "D2152",
+          "from": "张家港",
+          "to": "海安",
+          "depart": "08:23",
+          "arrive": "09:08",
+          "departDayOffset": 1,
+          "arriveDayOffset": 1,
+          "sleeper": false
+        }
+      ]
+    },
+    {
+      "id": "cd-ha-b2-safe",
+      "direction": "成都-海安",
+      "name": "D985 经江阴、张家港 · 稳妥",
+      "weekdays": [
+        3,
+        4,
+        5
+      ],
+      "depart": {
+        "station": "成都东",
+        "time": "17:51",
+        "dayOffset": 0
+      },
+      "arrive": {
+        "station": "海安",
+        "time": "09:08",
+        "dayOffset": 1
+      },
+      "segments": [
+        {
+          "train": "D985/D988",
+          "from": "成都东",
+          "to": "江阴",
+          "depart": "17:51",
+          "arrive": "07:18",
+          "departDayOffset": 0,
+          "arriveDayOffset": 1,
+          "sleeper": true
+        },
+        {
+          "transferAt": "江阴",
+          "waitMinutes": 21
+        },
+        {
+          "train": "C3651",
+          "from": "江阴",
+          "to": "张家港",
+          "depart": "07:39",
+          "arrive": "07:53",
+          "departDayOffset": 1,
+          "arriveDayOffset": 1,
+          "sleeper": false
+        },
+        {
+          "transferAt": "张家港",
+          "waitMinutes": 30
+        },
+        {
+          "train": "D2152",
+          "from": "张家港",
+          "to": "海安",
+          "depart": "08:23",
+          "arrive": "09:08",
+          "departDayOffset": 1,
+          "arriveDayOffset": 1,
+          "sleeper": false
+        }
+      ]
+    },
+    {
+      "id": "ha-cd-c1",
+      "direction": "海安-成都",
+      "name": "经淮安东 · 1次换乘",
+      "weekdays": [
+        1,
+        6,
+        7
+      ],
+      "depart": {
+        "station": "海安",
+        "time": "18:54",
+        "dayOffset": 0
+      },
+      "arrive": {
+        "station": "成都东",
+        "time": "08:57",
+        "dayOffset": 1
+      },
+      "segments": [
+        {
+          "train": "G3280",
+          "from": "海安",
+          "to": "淮安东",
+          "depart": "18:54",
+          "arrive": "20:07",
+          "departDayOffset": 0,
+          "arriveDayOffset": 0,
+          "sleeper": false
+        },
+        {
+          "transferAt": "淮安东",
+          "waitMinutes": 39
+        },
+        {
+          "train": "D972/D973",
+          "from": "淮安东",
+          "to": "成都东",
+          "depart": "20:46",
+          "arrive": "08:57",
+          "departDayOffset": 0,
+          "arriveDayOffset": 1,
+          "sleeper": true
+        }
+      ]
+    },
+    {
+      "id": "ha-cd-c2",
+      "direction": "海安-成都",
+      "name": "经盐城 · 1次换乘",
+      "weekdays": [
+        1,
+        6,
+        7
+      ],
+      "depart": {
+        "station": "海安",
+        "time": "19:18",
+        "dayOffset": 0
+      },
+      "arrive": {
+        "station": "成都东",
+        "time": "09:03",
+        "dayOffset": 1
+      },
+      "segments": [
+        {
+          "train": "C3884",
+          "from": "海安",
+          "to": "盐城",
+          "depart": "19:18",
+          "arrive": "19:53",
+          "departDayOffset": 0,
+          "arriveDayOffset": 0,
+          "sleeper": false
+        },
+        {
+          "transferAt": "盐城",
+          "waitMinutes": 41
+        },
+        {
+          "train": "D976/D977",
+          "from": "盐城",
+          "to": "成都东",
+          "depart": "20:34",
+          "arrive": "09:03",
+          "departDayOffset": 0,
+          "arriveDayOffset": 1,
+          "sleeper": true
+        }
+      ]
+    },
+    {
+      "id": "ha-cd-d1",
+      "direction": "海安-成都",
+      "name": "经张家港、江阴 · D982",
+      "weekdays": [
+        3,
+        4,
+        5
+      ],
+      "depart": {
+        "station": "海安",
+        "time": "17:32",
+        "dayOffset": 0
+      },
+      "arrive": {
+        "station": "成都东",
+        "time": "08:16",
+        "dayOffset": 1
+      },
+      "segments": [
+        {
+          "train": "G3172",
+          "from": "海安",
+          "to": "张家港",
+          "depart": "17:32",
+          "arrive": "18:08",
+          "departDayOffset": 0,
+          "arriveDayOffset": 0,
+          "sleeper": false
+        },
+        {
+          "transferAt": "张家港",
+          "waitMinutes": 27
+        },
+        {
+          "train": "G2422/G2423",
+          "from": "张家港",
+          "to": "江阴",
+          "depart": "18:35",
+          "arrive": "18:49",
+          "departDayOffset": 0,
+          "arriveDayOffset": 0,
+          "sleeper": false
+        },
+        {
+          "transferAt": "江阴",
+          "waitMinutes": 37
+        },
+        {
+          "train": "D982/D983",
+          "from": "江阴",
+          "to": "成都东",
+          "depart": "19:26",
+          "arrive": "08:16",
+          "departDayOffset": 0,
+          "arriveDayOffset": 1,
+          "sleeper": true
+        }
+      ]
+    },
+    {
+      "id": "ha-cd-d2",
+      "direction": "海安-成都",
+      "name": "经张家港、南京南 · D986",
+      "weekdays": [
+        3,
+        4,
+        5
+      ],
+      "depart": {
+        "station": "海安",
+        "time": "17:32",
+        "dayOffset": 0
+      },
+      "arrive": {
+        "station": "成都东",
+        "time": "08:21",
+        "dayOffset": 1
+      },
+      "segments": [
+        {
+          "train": "G3172",
+          "from": "海安",
+          "to": "张家港",
+          "depart": "17:32",
+          "arrive": "18:08",
+          "departDayOffset": 0,
+          "arriveDayOffset": 0,
+          "sleeper": false
+        },
+        {
+          "transferAt": "张家港",
+          "waitMinutes": 27
+        },
+        {
+          "train": "G2422/G2423",
+          "from": "张家港",
+          "to": "南京南",
+          "depart": "18:35",
+          "arrive": "19:41",
+          "departDayOffset": 0,
+          "arriveDayOffset": 0,
+          "sleeper": false
+        },
+        {
+          "transferAt": "南京南",
+          "waitMinutes": 55
+        },
+        {
+          "train": "D986/D987",
+          "from": "南京南",
+          "to": "成都东",
+          "depart": "20:36",
+          "arrive": "08:21",
+          "departDayOffset": 0,
+          "arriveDayOffset": 1,
+          "sleeper": true
+        }
+      ]
+    }
+  ]
+}

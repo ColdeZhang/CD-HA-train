@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>成都 ↔ 海安 夜间动卧方案</title>
+  <link rel="stylesheet" href="./assets/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>成都 ↔ 海安 夜间动卧方案</h1>
+      <p>循环周时间轴 · 每行一个方案 · 点击横条展开详情</p>
+    </div>
+    <div class="toolbar">
+      <button id="todayBtn">回到本周</button>
+      <label><input id="hideTight" type="checkbox"> 隐藏紧张换乘</label>
+      <button id="collapseBtn">折叠全部</button>
+    </div>
+  </header>
+  <main>
+    <section id="meta" class="meta"></section>
+    <section id="planner" class="planner" aria-live="polite"></section>
+  </main>
+  <template id="detailTemplate">
+    <div class="details"></div>
+  </template>
+  <script type="module" src="./assets/app.js"></script>
+</body>
+</html>
