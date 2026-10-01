@@ -3,7 +3,6 @@ const WEEK_COPIES=21;
 const BASE_WEEK_OFFSET=10;
 
 const planner=document.querySelector("#planner");
-const meta=document.querySelector("#meta");
 const hideTight=document.querySelector("#hideTight");
 const todayBtn=document.querySelector("#todayBtn");
 const modal=document.querySelector("#tripModal");
@@ -53,13 +52,8 @@ async function init(){
   const res=await fetch("./data/train-plans.json",{cache:"no-store"});
   if(!res.ok) throw new Error("无法加载 data/train-plans.json");
   DATA=await res.json();
-  renderMeta();
   render();
   requestAnimationFrame(centerAll);
-}
-
-function renderMeta(){
-  meta.innerHTML="<strong>数据版本 "+DATA.meta.version+"</strong><br>"+DATA.meta.notes[0];
 }
 
 function render(){
@@ -95,7 +89,13 @@ function buildTimeline(plans,direction){
 
   const labels=document.createElement("div");
   labels.className="labels";
-  let labelHtml='<div class="label-head"><span>方案</span><span>出发 → 到达</span></div>';
+  let labelHtml=
+    '<div class="label-head">'+
+      '<div class="label-head-title"><span>方案</span><span>出发 → 到达</span></div>'+
+      '<button class="labels-toggle" type="button" aria-label="折叠方案列" title="折叠方案列">'+
+        '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 7l-5 5 5 5"/></svg>'+
+      '</button>'+
+    '</div>';
   plans.forEach(function(p){
     const tag=hasTight(p)
       ? '<span class="plan-tag warn">换乘偏紧</span>'
@@ -104,9 +104,22 @@ function buildTimeline(plans,direction){
       '<div class="plan-label">'+
         '<div class="plan-label-top"><strong>'+p.name+'</strong>'+tag+'</div>'+
         '<div class="plan-time"><b>'+p.depart.time+'</b><i></i><b>次日 '+p.arrive.time+'</b></div>'+
+        '<div class="plan-days"><span>开行</span>'+weekdaysText(p)+'</div>'+
       '</div>';
   });
   labels.innerHTML=labelHtml;
+  const labelsToggle=labels.querySelector(".labels-toggle");
+  const defaultCollapsed=window.matchMedia("(max-width:680px)").matches;
+  if(defaultCollapsed) shell.classList.add("labels-collapsed");
+  labelsToggle.setAttribute("aria-expanded",defaultCollapsed?"false":"true");
+  labelsToggle.setAttribute("aria-label",defaultCollapsed?"展开方案列":"折叠方案列");
+  labelsToggle.title=defaultCollapsed?"展开方案列":"折叠方案列";
+  labelsToggle.addEventListener("click",function(){
+    const collapsed=shell.classList.toggle("labels-collapsed");
+    labelsToggle.setAttribute("aria-expanded",collapsed?"false":"true");
+    labelsToggle.setAttribute("aria-label",collapsed?"展开方案列":"折叠方案列");
+    labelsToggle.title=collapsed?"展开方案列":"折叠方案列";
+  });
 
   const scroller=document.createElement("div");
   scroller.className="scroller";
