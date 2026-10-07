@@ -1,14 +1,14 @@
 {
   "meta": {
     "title": "成都 ↔ 海安 夜间动卧方案",
-    "version": "2026-10-01",
+    "version": "2026-10-06",
     "timezone": "Asia/Shanghai",
     "notes": [
       "用于长期车次安排速查，不代表实时余票。",
       "铁路实行一日一图，节假日、调图期和临时加开可能变化。",
       "核心筛选目标：尽量保证完整夜间睡眠落在某一趟动卧上。"
     ],
-    "fareUpdated": "2026-10-01",
+    "fareUpdated": "2026-10-06",
     "fareNote": "票价为成人票参考价；接驳段按二等座，夜间长途段按动卧。动卧及部分动车实行浮动票价，区间表示近期查询到的参考范围，购票以12306实时价格为准。"
   },
   "plans": [
@@ -423,7 +423,7 @@
       },
       "arrive": {
         "station": "成都东",
-        "time": "09:03",
+        "time": "09:01",
         "dayOffset": 1
       },
       "segments": [
@@ -451,13 +451,13 @@
           "from": "盐城",
           "to": "成都东",
           "depart": "20:34",
-          "arrive": "09:03",
+          "arrive": "09:01",
           "departDayOffset": 0,
           "arriveDayOffset": 1,
           "sleeper": true,
           "fare": {
             "seat": "动卧",
-            "min": 780,
+            "min": 690,
             "max": 780
           }
         }
